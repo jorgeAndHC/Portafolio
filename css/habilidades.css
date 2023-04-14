@@ -1,0 +1,147 @@
+html,
+*{
+    margin: 1;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;}
+body {
+  height: 100%;
+}
+body{
+    display: 100%;
+    margin: 1;    
+    background: hsl(303, 100%, 11%);  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+nav {
+    position: absolute;
+    top: 10%;
+    right: 75%;
+    left: 0;
+    width: 319px;
+    display: table;
+    margin: 0 auto;
+    transform: translateY(-50%);
+  }
+  
+  nav a.barra {
+    position: relative;
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: #2196f3;
+    box-shadow: 0 0 0px #bb21f3;
+      transition-delay: 1s;
+    text-decoration: none;
+    font-family: consolas;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+  }
+  
+  nav a.barra:before,
+  nav a.barra:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+  }
+  
+  nav a.barra:before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  nav a.barra:after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+  }
+  
+  nav a.barra:nth-child(1):before {
+    background-color: #ec38bc;
+  }
+  
+  nav a.barra:nth-child(1):after {
+    background-color: #2196f3;
+  }
+  
+  nav a.barra:nth-child(2):before {
+    background-color: #ec38bc;
+  }
+  
+  nav a.barra:nth-child(2):after {
+    background-color: #2196f3;
+  }
+  
+  nav a.barra:nth-child(3):before {
+    background-color: #ec38bc;
+  }
+  
+  nav a.barra:nth-child(3):after {
+    background-color: #2196f3;
+  }
+  
+  #indicator {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 30px;
+    height: 3px;
+    background: #bb21f3;
+    box-shadow: 0 0 10px #bb21f3, 0 0 40px #bb21f3, 0 0 80px #bb21f3;
+    transition-delay: 1s;
+  
+  
+    border-radius: 5px;
+    transition: 0.2s ease left;
+  }
+  
+  
+nav a.barra:hover {
+  color: rgb(235, 85, 235)
+}
+
+nav a.barra:hover:before,
+nav a.barra:hover:after {
+  transform: scale(1);
+}
+
+nav a.barra:nth-child(1):hover ~ #indicator {
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: .1s;
+
+
+}
+
+nav a.barra:nth-child(2):hover ~ #indicator {
+  left: 28%;
+  background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: .1s;
+
+
+}
+
+nav a.barra:nth-child(3):hover ~ #indicator {
+  left: 53%;
+  background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: .1s;
+
+}
+nav a.barra:nth-child(4):hover ~ #indicator {
+  left: 75%;
+  background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: .1s;
+
+}
