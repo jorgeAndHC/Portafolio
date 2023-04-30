@@ -1,163 +1,157 @@
-html,
 *{
-    margin: 0;
-    padding: 1px;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;}
-body {
-  height: 100%;
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+body{
+  background: #360033;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
-body {
-  display: 100%;
-  margin: 0;
-  background: hsl(303, 100%, 11%);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-    
-nav {
-  position: absolute;
-  top: 10%;
-  right: 75%;
-  left: 0;
-  width: 30%;
-  display: table;
-  margin: 0 auto;
-  transform: translateY(-50%);
-}
-
-nav a.barra {
-  position: relative;
-  width: 33.333%;
-  display: table-cell;
-  text-align: center;
-  font-size: .85rem;
-  color: #2196f3;
-  box-shadow: 0 0 0px #bb21f3;
-    transition-delay: 1s;
-  text-decoration: none;
-  font-family: consolas;
-  font-weight: bold;
-  padding: 10px 20px;
-  transition: 0.2s ease color;
-}
-
-nav a.barra:before,
-nav a.barra:after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 0.2s ease transform;
-}
-
-nav a.barra:before {
+.wrapper{
+  position: fixed;
   top: 0;
-  left: 10px;
-  width: 6px;
-  height: 6px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #360033;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  clip-path: circle(15px at calc(100% - 35px) 35px); /*movimiento del circulo de adentro */
+  transition: all 0.3s ease-in-out;
 }
+#active:checked ~ .wrapper{
+  clip-path: circle(75%);
+}
+i.fas.fa-bars{
+  display: flex;
+  justify-content: center;
+  color: #14ffe9;
+}
+.icon.icon-tabler.icon-tabler-ghost{/*fantasma icono*/
+position: relative;
+bottom: .5rem;
+color: #14ffe9;
+box-shadow:  5px #03e9f4,
+                  25px #03e9f4,
+                  50px #03e9f4,
+                  100px #03e9f4;
 
-nav a.barra:after {
-  top: 5px;
-  left: 18px;
-  width: 4px;
-  height: 4px;
 }
-
-nav a.barra:nth-child(1):before {
-  background-color: #ec38bc;
-}
-
-nav a.barra:nth-child(1):after {
-  background-color: #2196f3;
-}
-
-nav a.barra:nth-child(2):before {
-  background-color: #ec38bc;
-}
-
-nav a.barra:nth-child(2):after {
-  background-color: #2196f3;
-}
-
-nav a.barra:nth-child(3):before {
-  background-color: #ec38bc;
-}
-
-nav a.barra:nth-child(3):after {
-  background-color: #2196f3;
-}
-nav a.barra:nth-child(4):before {
-  background-color: #ec38bc;
-}
-
-nav a.barra:nth-child(4):after {
-  background-color: #2196f3;
-}
-#indicator {
+.menu-btn{
+  display: flex;
+  justify-content: center;
   position: absolute;
-  left: 5%;
-  bottom: 0;
-  width: 30px;
-  height: 3px;
-  background: #bb21f3;
-  box-shadow: 0 0 10px #bb21f3, 0 0 40px #bb21f3, 0 0 80px #bb21f3;
-  transition-delay: 1s;
-
-
-  border-radius: 5px;
-  transition: 0.2s ease left;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+ border: 2px solid #ff00e0 ;
+ box-shadow: 0 0 5px #ff00e0,
+ 0 0 25px #ff00e0,
+ 0 0 50px #ff00e0,
+ 0 0 100px #ff00e0;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .menu-btn{
+  color: #fff;
+}
+#active:checked ~ .menu-btn i:before{
+  content: "\f00d";
+}
+.wrapper ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  display: flex;
+  justify-content: center;
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  border-radius: 50px;
+  background: #000000;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+   background: linear-gradient(#e3e9e9);
+ 
+  width: 104%;
+  height: 110%;
+  left: -2%;
+  top: -5%; /* if the font is 'Oswald'*/
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  animation: rotate 1.5s linear infinite;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #fff;
+}
+input[type="checkbox"]{
+  display: none;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #202020;
+}
+.content .title{
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p{
+  font-size: 35px;
+  font-weight: 600;
 }
 
-nav a.barra:hover {
-  color: rgb(235, 85, 235)
-}
-
-nav a.barra:hover:before,
-nav a.barra:hover:after {
-  transform: scale(1);
-}
-
-nav a.barra:nth-child(1):hover ~ #indicator {
-    background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: .1s;
-
-
-}
-
-nav a.barra:nth-child(2):hover ~ #indicator {
-  left: 28%;
-  background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: .1s;
-
-
-}
-
-nav a.barra:nth-child(3):hover ~ #indicator {
-  left: 53%;
-  background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: .1s;
-
-}
-nav a.barra:nth-child(4):hover ~ #indicator {
-  left: 75%;
-  background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: .1s;
-
+@keyframes rotate {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
 }
 
 
-  
-  
 
 
 

@@ -4,7 +4,8 @@ img.logo{
   height: auto;
   border-radius: 5%;
   border: .1rem solid white;
-  box-shadow: 0rem .1rem 2.5rem black ;
+  box-shadow: 0rem .1rem 2.5rem rgb(235, 228, 228) ;
+  margin-top: 2rem;
 
 }
 .logo:hover{
@@ -18,12 +19,11 @@ img.logo{
 
 
 div{
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
 }
 .container{
-  display: flow-root ;
-  flex-direction: column ;
+  display: flex ;
   justify-content: center;
   align-content: center;
   color: #ffffff;
@@ -36,20 +36,15 @@ div{
 
 }
 #one {
-  background: #360033;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-box-shadow: 0px 1px 25px black;
-  width: 600px;
-  height: 370px;
-  border-radius: 15px;
+  
   border: solid rgb(255, 255, 255);
-  flex-grow: 7 ;
-  position: relative;
-  display: grid;
-  place-items: center;
-  top: 20px;
-  left: 330px;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+
   
   
   
@@ -73,5 +68,16 @@ p{
   to {
     margin-left: 0%;
     width: 100%;
+  }
+}
+@media (max-with: 320px) {
+  img.logo{
+    width: 60%;
+    height: auto;
+    border-radius: 5%;
+    border: .1rem solid white;
+    box-shadow: 0rem .1rem 2.5rem rgb(235, 228, 228) ;
+    margin-top: 2rem;
+  
   }
 }
